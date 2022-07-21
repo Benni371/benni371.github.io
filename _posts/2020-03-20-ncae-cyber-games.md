@@ -2,9 +2,9 @@
 layout: post
 title: NCAE Cyber Games
 subtitle: My First CCDC Competition
-cover-img: /assets/img/path.jpg
+cover-img: /assets/img/team.jpg
 thumbnail-img: /assets/img/ncae.png
-share-img: /assets/img/path.jpg
+share-img: /assets/img/team.jpg
 tags: [ctf]
 ---
 

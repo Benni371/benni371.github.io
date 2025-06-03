@@ -1,0 +1,21 @@
+---
+layout: default
+title: CTF's
+permalink: /ctfs/
+---
+
+<h1>CTF Tags</h1>
+
+<ul class="tag-list">
+  {% assign ctf_tags = site.tags | sort %}
+  {% for tag in ctf_tags %}
+    {% assign tag_name = tag[0] %}
+    {% if tag_name contains "ctf-" %}
+      <li>
+        <a href="/tags/{{ tag_name | slugify }}/">
+          {{ tag_name }} ({{ tag[1].size }})
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

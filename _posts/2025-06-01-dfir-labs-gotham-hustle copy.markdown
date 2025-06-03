@@ -2,7 +2,7 @@
 layout: post
 title:  "DFIRLABS: Gotham Hustle"
 date:   2025-06-01 19:41:34 -0400
-categories: dfir ctf
+tags: dfir ctf-dfirlabs
 author: Benshkies
 ---
 

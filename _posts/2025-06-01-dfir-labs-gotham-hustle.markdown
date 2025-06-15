@@ -174,7 +174,7 @@ Ah, I just love ambiguous fonts.
 
 Finally, decoding this last value and putting it in its place yields:
 
-`bi0sctf{w3lc0m3_t0_df1r_l4iu_h0p3_th15_b3n3f175_y0u_m0r3_13337431}`
+`bi0sctf{w3lc0m3_t0_df1r_l4b5_h0p3_th15_b3n3f175_y0u_m0r3_13337431}`
 
 ## Reflections on Suffering
 

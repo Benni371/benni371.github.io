@@ -15,7 +15,7 @@ layout: default
       </a>
     </h3>
     
-    {{ post.excerpt }}
+    {{ post.content | strip_html | truncatewords: 50 }}
     {%- if post.tags -%}
     <p class="post-tags">
       Tags:

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<article>
+  <div class="post-header">
+    <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+    <h1>{{ page.title }}</h1>
+    {% if page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <a href="/tags/{{ tag | slugify }}/" class="tag">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+<!-- Post Navigation -->
+<nav class="post-nav" style="
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+">
+  {% if page.previous.url %}
+    <a href="{{ page.previous.url }}" style="color: var(--text-secondary);">
+      &larr; {{ page.previous.title | truncatewords: 6 }}
+    </a>
+  {% else %}
+    <span></span>
+  {% endif %}
+  {% if page.next.url %}
+    <a href="{{ page.next.url }}" style="color: var(--text-secondary);">
+      {{ page.next.title | truncatewords: 6 }} &rarr;
+    </a>
+  {% else %}
+    <span></span>
+  {% endif %}
+</nav>

@@ -1,6 +1,10 @@
 - title: Home
   url: /
-- title: CTF's
+- title: Blog
+  url: /blog/
+- title: CTFs
   url: /ctfs/
-- title: All Tags
+- title: Tags
   url: /tags/
+- title: About
+  url: /about/

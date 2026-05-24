@@ -1,21 +1,48 @@
 ---
 layout: default
-title: CTF's
+title: CTFs
 permalink: /ctfs/
 ---
 
-<h1>CTF Tags</h1>
+<h1 class="page-title">CTF Writeups</h1>
+<p class="page-subtitle">Capture the Flag competition walkthroughs and solutions</p>
 
-<ul class="tag-list">
+<div class="post-grid">
   {% assign ctf_tags = site.tags | sort %}
   {% for tag in ctf_tags %}
     {% assign tag_name = tag[0] %}
     {% if tag_name contains "ctf-" %}
-      <li>
-        <a href="/tags/{{ tag_name | slugify }}/">
-          {{ tag_name }} ({{ tag[1].size }})
-        </a>
-      </li>
+      {% for post in tag[1] %}
+      <a href="{{ post.url }}" class="post-card">
+        <div class="post-meta">
+          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="tag">{{ tag_name }}</span>
+        </div>
+        <h3>{{ post.title }}</h3>
+        {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        {% endif %}
+      </a>
+      {% endfor %}
     {% endif %}
   {% endfor %}
-</ul>
+</div>
+
+{% assign has_ctf = false %}
+{% for tag in site.tags %}
+  {% if tag[0] contains "ctf-" %}
+    {% assign has_ctf = true %}
+  {% endif %}
+{% endfor %}
+
+{% unless has_ctf %}
+<div style="
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+">
+  No CTF writeups yet. Tag a post with "ctf-&lt;name&gt;" to have it appear here.
+</div>
+{% endunless %}

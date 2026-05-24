@@ -1,0 +1,49 @@
+---
+layout: default
+title: About
+permalink: /about/
+---
+
+<h1 class="page-title">About</h1>
+<p class="page-subtitle">A bit about me and this site</p>
+
+<div class="about-grid">
+  <div class="about-section">
+    <h2>// who I am</h2>
+    <p>
+      {{ site.author.bio | default: "I'm a digital forensics and cybersecurity professional who enjoys breaking things apart to understand how they work. This blog is where I document my learning — from DFIR lab walkthroughs to CTF writeups and security research." }}
+    </p>
+    <p style="margin-top: 1rem;">
+      When I'm not analyzing disk images or packet captures, you'll find me participating in CTF competitions and exploring new tools in the DFIR space.
+    </p>
+  </div>
+
+  <div class="about-section">
+    <h2>// about this site</h2>
+    <p>
+      This site is built with <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>. Posts are written in Markdown and the site is automatically built and deployed on push.
+    </p>
+    <p style="margin-top: 1rem;">
+      Want to get in touch? Reach out at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+  </div>
+
+  <div class="about-section">
+    <h2>// links</h2>
+    <p>
+      {% if site.author.github %}
+        <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener" class="btn btn-outline" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">
+          GitHub
+        </a>
+      {% endif %}
+      {% if site.author.linkedin and site.author.linkedin != "" %}
+        <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" rel="noopener" class="btn btn-outline" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">
+          LinkedIn
+        </a>
+      {% endif %}
+      <a href="/feed.xml" class="btn btn-outline" style="margin-bottom: 0.5rem;">
+        RSS Feed
+      </a>
+    </p>
+  </div>
+</div>

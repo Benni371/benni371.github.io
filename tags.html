@@ -4,19 +4,21 @@ title: All Tags
 permalink: /tags/
 ---
 
-<h1>All Tags</h1>
+<h1 class="page-title">Tags</h1>
+<p class="page-subtitle">Browse posts by topic</p>
 
 <div class="search-wrapper">
   <input
     type="text"
     id="tagSearch"
-    placeholder="> search tags"
+    placeholder="> search tags..."
     autocomplete="off"
   >
 </div>
 
-<ul id="tagList">
-  {% for tag in site.tags %}
+<ul id="tagList" class="tag-list">
+  {% assign sorted_tags = site.tags | sort %}
+  {% for tag in sorted_tags %}
     <li class="tag-item">
       <a href="/tags/{{ tag[0] | slugify }}/">
         {{ tag[0] }} ({{ tag[1].size }})
@@ -24,36 +26,6 @@ permalink: /tags/
     </li>
   {% endfor %}
 </ul>
-
-<style>
-  .search-wrapper {
-    margin-bottom: 1.5em;
-    width: 100%;
-    max-width: 500px;
-  }
-
-  #tagSearch {
-    background-color: #111;
-    color: #00ff00;
-    font-family: monospace;
-    border: 1px solid #0f0;
-    border-radius: 4px;
-    padding: 0.6em;
-    font-size: 1rem;
-    width: 100%;
-    box-shadow: 0 0 5px #0f0;
-    transition: box-shadow 0.3s ease;
-  }
-
-  #tagSearch:focus {
-    outline: none;
-    box-shadow: 0 0 10px #0f0;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
 
 <script>
   const input = document.getElementById('tagSearch');

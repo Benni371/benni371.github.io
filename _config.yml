@@ -16,6 +16,7 @@ plugins:
 tag_page_dir: tags
 tag_page_layout: tag_page
 
+
 # Pagination (if you add jekyll-paginate later)
 # paginate: 6
 # paginate_path: "/blog/page:num/"
